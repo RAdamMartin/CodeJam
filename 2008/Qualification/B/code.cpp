@@ -4,6 +4,9 @@
 #include <sstream>
 #include <string>
 
+//Class that maintains a list of arrival and departure times (in minutes).
+//When the user calls calculateNumRequired, the manager erases all departures
+//covered by arrivals, and returns the number of remaining departures. 
 class ScheduleManager {
     private:
         std::multiset<uint> arrivals_;
@@ -28,7 +31,7 @@ class ScheduleManager {
         };
 };
 
-
+//Function to convert datetime input to minutes and pass to managers.
 void processLine(uint numLines, ScheduleManager& departs, ScheduleManager& arrives){
     auto getMinutes = [](std::string str) 
                         {return std::stoi(str.substr(0,2))*60
