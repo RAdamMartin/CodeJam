@@ -9,22 +9,13 @@ class ScheduleManager {
         std::multiset<uint> arrivals_;
         std::multiset<uint> departures_;
         uint turnaround_;
-        uint getMinutes(std::string times){
-            std::stringstream ss(times);
-            uint ret, temp;
-            ss >> ret;
-            ret *= 60;
-            ss >> temp;
-            ret += temp;
-            return ret;
-        };
     public:
         ScheduleManager(uint turnaround=0) : turnaround_(turnaround){};
-        void addArrival(std::string time){
-            arrivals_.emplace(getMinutes(time) + turnaround_);
+        void addArrival(uint minutes){
+            arrivals_.emplace(minutes + turnaround_);
         };
-        void addDeparture(std::string time){
-            departures_.emplace(getMinutes(time));
+        void addDeparture(uint minutes){
+            departures_.emplace(minutes);
         };
         uint calculateNumRequired(){
             for(const auto &a : arrivals_){
@@ -37,13 +28,16 @@ class ScheduleManager {
         };
 };
 
+
 void processLine(uint numLines, ScheduleManager& departs, ScheduleManager& arrives){
+    auto getMinutes = [](std::string str) 
+                        {return std::stoi(str.substr(0,2))*60
+                                + std::stoi(str.substr(3,2));};
     while(numLines-- > 0){
         std::string temp;
         std::getline(std::cin, temp);
-        std::replace(temp.begin(), temp.end(), ':', ' ');
-        departs.addDeparture(temp.substr(0,5));
-        arrives.addArrival(temp.substr(5));
+        departs.addDeparture(getMinutes(temp.substr(0,5)));
+        arrives.addArrival(getMinutes(temp.substr(6)));
     }
 }
 
