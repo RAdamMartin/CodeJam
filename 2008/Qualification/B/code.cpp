@@ -45,6 +45,8 @@ void processLine(uint numLines, ScheduleManager& departs, ScheduleManager& arriv
 }
 
 int main(){ 
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
     std::string temp;
     uint N,T,A,B;
     std::cin >> N;

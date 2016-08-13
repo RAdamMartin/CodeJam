@@ -3,6 +3,8 @@
 #include <iostream>
 
 int main(){ 
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
     std::string temp;
     std::getline(std::cin, temp);
     const int N = std::stoi(temp);
@@ -14,12 +16,12 @@ int main(){
         //number of queries to process. We do not care what the different possible
         //engines are.  
         std::getline(std::cin, temp);
-        auto s = std::stoi(temp); 
-        auto j = s;
+        uint s = std::stoi(temp); 
+        int j = s;
         while(j-- >= 0){
             std::getline(std::cin, temp);
         }
-        auto q = std::stoi(temp);
+        int q = std::stoi(temp);
 
         //Add each line to a set of queries to run. If adding the new query makes 
         //there be s distinct queries to run, then we had to run the unrun queries
