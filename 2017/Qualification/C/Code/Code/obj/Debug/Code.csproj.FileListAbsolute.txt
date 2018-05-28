@@ -1,0 +1,6 @@
+C:\GitHub\CodeJam\2017\Qualification\C\Code\Code\bin\Debug\Code.exe.config
+C:\GitHub\CodeJam\2017\Qualification\C\Code\Code\bin\Debug\Code.exe
+C:\GitHub\CodeJam\2017\Qualification\C\Code\Code\bin\Debug\Code.pdb
+C:\GitHub\CodeJam\2017\Qualification\C\Code\Code\obj\Debug\Code.csprojResolveAssemblyReference.cache
+C:\GitHub\CodeJam\2017\Qualification\C\Code\Code\obj\Debug\Code.exe
+C:\GitHub\CodeJam\2017\Qualification\C\Code\Code\obj\Debug\Code.pdb
